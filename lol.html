@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Laaal 🕸️💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Sacramento&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: #0f051d;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Falling Flowers Effect */
+    .flower {
+      position: fixed;
+      top: -10px;
+      font-size: 1.5rem;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(30, 10, 45, 0.75);
+      border: 2px solid rgba(255, 105, 180, 0.3);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 20, 147, 0.25);
+      z-index: 10;
+      position: relative;
+      transition: all 0.5s ease;
+    }
+
+    /* Custom Spider Heart SVG Styling */
+    .spider-heart {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 15px;
+      filter: drop-shadow(0 0 10px #ff2a6d);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #a29bfe);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #dcdde1;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    /* Lock / Input Area */
+    .input-box {
+      margin: 20px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 2px solid #ff2a6d;
+      background: rgba(15, 5, 29, 0.8);
+      color: #fff;
+      font-size: 1rem;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 15px #ff2a6d;
+    }
+
+    .hint {
+      font-size: 0.82rem;
+      color: #ff9ff3;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    button {
+      background: linear-gradient(135deg, #ff2a6d, #9b51e0);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 15px;
+      box-shadow: 0 4px 15px rgba(255, 42, 109, 0.4);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-2deg);
+      box-shadow: 0 6px 20px rgba(255, 42, 109, 0.6);
+    }
+
+    .error-msg {
+      color: #ff4757;
+      font-size: 0.85rem;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Page 2 Secret Message */
+    #page2 {
+      display: none;
+    }
+
+    .romantic-heading {
+      font-family: 'Sacramento', cursive;
+      font-size: 2.8rem;
+      color: #ff758c;
+      margin-bottom: 10px;
+    }
+
+    .message-body {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #f1f2f6;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 16px;
+      border-left: 3px solid #ff758c;
+      margin: 15px 0;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .gif-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 117, 140, 0.4);
+    }
+
+    .gif-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .tagline {
+      font-weight: 600;
+      color: #a29bfe;
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: SECRET LOCK -->
+  <div class="container" id="page1">
+    <!-- SVG Spider-Heart Logo -->
+    <svg class="spider-heart" viewBox="0 0 100 100">
+      <path d="M50 88 C20 65 5 45 15 25 C22 10 40 10 50 28 C60 10 78 10 85 25 C95 45 80 65 50 88 Z" fill="none" stroke="#ff2a6d" stroke-width="3.5" />
+      <!-- Spider Legs styling -->
+      <path d="M50 45 L25 25 M50 50 L18 40 M50 55 L20 60 M50 60 L30 75" stroke="#ff758c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M50 45 L75 25 M50 50 L82 40 M50 55 L80 60 M50 60 L70 75" stroke="#ff758c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="5" fill="#ff2a6d" />
+    </svg>
+
+    <h1>Welcome to Our Dimension 🕸️✨</h1>
+    <p class="subtitle"> This little place has only one rightful visitor lol .....</p>
+
+    <div class="input-box">
+      <input type="text" id="dateInput" placeholder="Enter the special date..." autocomplete="off">
+      <p class="hint">💡 Hint: The exact day number we matched & our universe began 😉</p>
+      <p class="error-msg" id="error">Ayyy wrong key! Try again Mr. Laaal 😜❤️</p>
+    </div>
+
+    <button onclick="checkKey()">Unlock Universe 💗</button>
+  </div>
+
+  <!-- PAGE 2: SECRET SPIDER-VERSE LOVE LETTER -->
+  <div class="container" id="page2">
+   <div class="gif-container">
+  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnRlN3RhdDQwZ2M2bG9maHRyaTJvNWtqdHdqaHZxMzQ4YWR4dTJ6dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i02m1trPicCLnX1QcO/giphy.gif" alt="Spidey & Gwen">
+</div>
+
+    <h2 class="romantic-heading">Hey Mr. Laaal... 🌸</h2>
+
+    <div class="message-body">
+     my laaaalllll🥹💗🫂
+
+if yuu reached this page na then very noiceeee lol  My favourite spideyyyy unlocked one more hidden chapter of our trilogy haw🕸️
+
+he page fakta code nahi ahe he mazya hrudayacha ek tiny corner ahe jithe maza laaal permanently booked ahe haw lol 💗 yuu always say na pratyek paan aplyala divsen divas javal aanat jaanar tar mala vatla aaj ek page mi lihava tuzya sathi
+
+yuu know whattttt mala ajun pn funny vatht ki apan don random strangers hoto ani ata aaplya dokyat ek complete universe rahte laaal laali peter gwen wayfal badbad post credit scenes spoiler alerts limboni flower petal moments ani ajun kiti kahi😭🌸 somehow aaplya chats fakta chats rahilya nahit tya aaplya memories banat gelya
+
+mala tuzyabaddal saglyat jast kay avadta mahit ahe ka you notice the tiniest things yuu remember random goshti yuu celebrate tiny wins yuu openly sangtos jevha tu happy astos jevha tu nervous astos jevha tu craving for my hugs astos ani somehow maza heart tevha ajun soft houn jato haw🫂
+
+ani excuse meeee Mr Personal Writerrrr atta role reversal zala ata mazi turn aheee kahi banvaychi tuzya sathi mhnun he tiny world tayar kela jithe yuu can come back anytime and smile haww
+🫂💗
+
+my wish is simpleeee mala fakta ajun khup chapters lihaychet tuzysobat random moments ani khup saari ordinary days je aaplya sathi extraordinary banatil🌸🕸️
+
+
+
+BBBBBiggest huggg for my laaaalllll🫂🫂🫂
+
+khup saara prem MY BABYGORLLL HAW 💗💗💗
+
+    </div>
+
+    <p class="tagline">Laal chi Laali trilogy 💗🕸️✨</p>
+  </div>
+
+  <script>
+    // Falling Flowers & Spider-Icons Script
+    const flowers = ['🌸', '🌺', '🌷', '🌹', '✨', '🕸️', '💖'];
+    function createFlower() {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = Math.random() * 3 + 3 + 's';
+      flower.style.fontSize = Math.random() * 1 + 1 + 'rem';
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 6000);
+    }
+    setInterval(createFlower, 300);
+
+    // Password Lock Logic (Matched on Sept 1st!)
+    function checkKey() {
+      const input = document.getElementById('dateInput').value.trim().toLowerCase();
+      const error = document.getElementById('error');
+      
+      const validAnswers = ['1', '01', '1st', '01st', '1 sept', '1 september', 'sept 1', 'september 1', '01/09/2026', '1/9/2026', '01-09-2026', '1-9-2026'];
+
+      if (validAnswers.includes(input)) {
+        document.getElementById('page1').style.display = 'none';
+        document.getElementById('page2').style.display = 'block';
+      } else {
+        error.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
